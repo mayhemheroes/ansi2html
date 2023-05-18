@@ -1,4 +1,4 @@
-project: PROJECT_NAME
+project: ansi2html
 target: convert_short
 duration: 600
 cmds:
