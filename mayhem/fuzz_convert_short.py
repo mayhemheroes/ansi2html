@@ -8,14 +8,10 @@ with atheris.instrument_imports():
 # Global converter
 conv = Ansi2HTMLConverter()
 
-def RandomString(fdp, min_len, max_len):
-  str_len = fdp.ConsumeIntInRange(min_len, max_len)
-  return fdp.ConsumeUnicodeNoSurrogates(str_len)
-
 def TestOneInput(data):
     fdp = atheris.FuzzedDataProvider(data)
 
-    ansi = RandomString(fdp, 0, 20)
+    ansi = fdp.ConsumeUnicodeNoSurrogates(20)
     conv.convert(ansi)
 
 
